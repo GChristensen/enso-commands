@@ -9,7 +9,7 @@ v0.1.0
 I haven't found any command package suitable for my needs, so I decided to make
 my own one, since there is almost nothing to do with C#. 
 If you like Enso, you can use the source code freely as you wish, see more at
-the Enso Launcher page (http://humanized.com/enso/launcher/) and Enso Wiki
+the Enso Launcher page (http://humanized.com/enso/launcher) and Enso Wiki
 (http://ensowiki.com).
 
 The commands are based on a slightly modified version of C# Enso Extension 
@@ -22,9 +22,9 @@ registry autostart key.
 
 Dependencies
 
-  * Humanized Enso Launcher (http://humanized.com/enso/launcher/)
+  * Humanized Enso Launcher (http://humanized.com/enso/launcher)
   * Enso Developer Prototype (http://humanized.com/enso/beta/enso-developer-prototype)
-  * Microsoft .NET Framework 4.0 (http://microsoft.com/net/)
+  * Microsoft .NET Framework 4.0 (http://microsoft.com/net)
   * Abbyy Lingvo dictionary software (optional)
 
 
