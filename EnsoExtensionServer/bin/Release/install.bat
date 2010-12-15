@@ -1,0 +1,1 @@
+reg add "hkcu\Software\Microsoft\Windows\CurrentVersion\Run" /v EnsoExtension /t reg_sz /d "%~dp0EnsoExtensionServer.exe" /f

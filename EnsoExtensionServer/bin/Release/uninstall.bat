@@ -1,0 +1,1 @@
+reg delete "hkcu\Software\Microsoft\Windows\CurrentVersion\Run" /v EnsoExtension /f
