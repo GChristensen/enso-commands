@@ -19,6 +19,9 @@ or disable any extension by (un)commenting out its reference entry in the
 Use `(un)install.bat' files to add or remove extension server to/from Windows
 registry autostart key.
 
+A binary package may be downloaded here: 
+https://github.com/downloads/GChristensen/enso-commands/EnsoCommands-0.1.0.zip
+
 
 Dependencies
 
