@@ -10,15 +10,6 @@ namespace EnsoExtension
 {
     public class NetworkExtension : IEnsoExtension
     {
-        private struct CommandDesc
-        {
-            public Action<String, IEnsoService> action;
-            public String desc;
-            public String postfix;
-            public EnsoPostfixType postfixType;
-            public Func<String[]> getPostfixes;
-        };
-
         private static readonly String CONNECT_ERROR = "Connection error";
         private static readonly String HANGUP_ERROR = "Error during hangup";
 
