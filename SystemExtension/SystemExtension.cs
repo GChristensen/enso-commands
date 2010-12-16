@@ -26,14 +26,6 @@ namespace EnsoExtension
 
     public class SystemExtension : IEnsoExtension
     {
-        private struct CommandDesc
-        {
-            public Action<String, IEnsoService> action; 
-            public String desc;
-            public String postfix;
-            public EnsoPostfixType postfixType;
-        };
-        
         private Dictionary<String, CommandDesc> commandActions =
             new Dictionary<String, CommandDesc>()
             {
@@ -57,7 +49,18 @@ namespace EnsoExtension
                         postfix = "process name or id",
                         postfixType = EnsoPostfixType.Arbitrary
                     }
+                },
+                {
+                    "process list", 
+                    new CommandDesc 
+                    {
+                        action = ListProcesses, 
+                        desc = "List active processes",
+                        postfix = "",
+                        postfixType = EnsoPostfixType.None
+                    }
                 }
+
             };
 
         private List<EnsoCommand> commands;
@@ -173,6 +176,37 @@ namespace EnsoExtension
                 service.DisplayMessage(new EnsoMessage("Process " + postfix
                     + " not found"));
         }
+
+        private static void ListProcesses(String postfix,
+            IEnsoService service)
+        {
+            Process[] processes = Process.GetProcesses();
+            SortedSet<String> uniqueNames = new SortedSet<String>();
+
+            foreach (Process p in processes)
+                uniqueNames.Add(p.ProcessName);
+
+            char initial = '\0';
+            String message = "";
+
+            foreach (String s in uniqueNames)
+            {
+                String name = s.ToLower();
+
+                if (name.Length > 0 && !name[0].Equals(initial))
+                {
+                    initial = name[0];
+                    name = char.ToUpper(name[0]) + name.Substring(1);
+                }
+
+                message += name + " ";                
+            }
+
+            message = "<p>" + message.Trim() + "</p>";
+
+            service.DisplayMessage(new FreeFormatMessage(message));
+        }
+
 
         public void Load(IEnsoService service)
         {
