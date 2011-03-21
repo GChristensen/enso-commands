@@ -15,9 +15,9 @@ namespace EnsoExtension
         private static readonly String COMMAND_POSTFIX =
             "word [from lang to lang]";
         private static readonly String COMMAND_DESC = 
-            "Translate word with Abbyy Lingvo dictionary software";
+            "Translate a word with Abbyy Lingvo dictionary software";
         private static readonly String COMMAND_HELP =
-            "Use this command to translate the argument word or "
+            "Use this command to translate an argument word or "
             + "the current selection with the Abbyy Lingvo dictionary "
             + "software.<br/>"
             + "You can specify source and destination languages after "
@@ -29,7 +29,7 @@ namespace EnsoExtension
             + "es - Spanish<br/>"
             + "fr - French<br/>"
             + "it - Italian<br/>"
-            + "lat - Latin<br/>"
+            + "la - Latin<br/>"
             + "pt - Portuguese<br/>"
             + "ru - Russian<br/>"
             + "ua - Ukrainan<br/>";
@@ -51,7 +51,7 @@ namespace EnsoExtension
             {"it", 1040},
             {"es", 1034},
             {"ua", 1058},
-            {"lat", 1540},
+            {"la", 1540},
             {"en", 1033},
             {"pt", 2070},
             {"ru", 1049}
